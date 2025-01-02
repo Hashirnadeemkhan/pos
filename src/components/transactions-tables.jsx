@@ -1,87 +1,151 @@
-const transactionData = [
+import { useState } from "react";
+
+import { Link } from "react-router-dom";
+const restaurantData = [
   {
-    id: "4257 **** **** 7852",
-    date: "11 April 2023",
-    amount: "$79.49",
-    cardType: "Visa",
-    cardLabel: "Card",
-    customer: "Helen Warren",
-    paymentType: "Pay"
+    image: "/spice.jpeg",
+    name: "The Spice Room",
+    email: "spiceroom@gmail.com",
+    status: "Active",
   },
   {
-    id: "4427 **** **** 4568",
-    date: "28 Jan 2023",
-    amount: "$1254.00",
-    cardType: "Visa",
-    cardLabel: "Card",
-    customer: "Kayla Lambie",
-    paymentType: "Pay"
+    image: "/olive.jpeg",
+    name: "Olive Garden",
+    email: "olivegarden@gmail.com",
+    status: "Inactive",
   },
   {
-    id: "4265 **** **** 0025",
-    date: "08 Dec 2022",
-    amount: "$784.25",
-    cardType: "Master",
-    cardLabel: "Card",
-    customer: "Hugo Lavarack",
-    paymentType: "Pay"
+    image: "/sushi.jpeg",
+    name: "Sushi Paradise",
+    email: "sushiparadise@gmail.com",
+    status: "Active",
   },
   {
-    id: "7845 **** **** 5214",
-    date: "03 Dec 2022",
-    amount: "$485.24",
-    cardType: "Stripe",
-    cardLabel: "Card",
-    customer: "Amber Scurry",
-    paymentType: "Pay"
+    image: "/burger.webp",
+    name: "Burger Haven",
+    email: "burgerhaven@gmail.com",
+    status: "Active",
   },
   {
-    id: "4257 **** **** 7852",
-    date: "12 Nov 2022",
-    amount: "$8964.04",
-    cardType: "Maestro",
-    cardLabel: "Card",
-    customer: "Caitlyn Gibney",
-    paymentType: "Pay"
-  }
+    image: "/pasta.jpeg",
+    name: "Pasta Palace",
+    email: "pastapalace@gmail.com",
+    status: "Inactive",
+  },
 ];
 
-export default function TransactionsTable() {
+export default function RestaurantsTable() {
+  
+ 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+ 
+
+  const handleDelete = () => {
+    // Handle delete logic here
+    setIsModalOpen(false); // Close the modal after deleting
+    alert("Restaurant deleted!");
+  };
+
+
   return (
-    <div className="bg-white rounded-lg shadow mt-10 ">
-      <div className="flex items-center justify-between p-6 ">
+    <div className="bg-white rounded-lg shadow mt-10">
+      {/* Header with Add Restaurant Button */}
+      <div className="flex items-center justify-between p-6">
         <h2 className="text-xl font-semibold">Restaurants</h2>
+       <Link to="/add-restaurant"><button
+        
+        className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+      >
+        Add Restaurant
+      </button></Link>
       </div>
+
+      {/* Table */}
       <div className="overflow-x-auto">
         <table className="w-full min-w-[800px]">
           <thead className="bg-gray-50 text-gray-600">
             <tr>
-              <th className="py-4 px-6 text-left font-medium">Transaction ID</th>
-              <th className="py-4 px-6 text-left font-medium">Date</th>
-              <th className="py-4 px-6 text-left font-medium">Amount</th>
-              <th className="py-4 px-6 text-left font-medium">Card Type</th>
-              <th className="py-4 px-6 text-left font-medium">Customer</th>
-              <th className="py-4 px-6 text-left font-medium">Payment</th>
+              <th className="py-4 px-6 text-left font-medium">Image</th>
+              <th className="py-4 px-6 text-left font-medium">
+                Restaurant Name
+              </th>
+              <th className="py-4 px-6 text-left font-medium">Email</th>
+              <th className="py-4 px-6 text-left font-medium">
+                Account Status
+              </th>
+              <th className="py-4 px-6 text-left font-medium">Actions</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
-            {transactionData.map((transaction) => (
-              <tr key={transaction.id + transaction.date} className="text-gray-500 hover:bg-gray-50">
-                <td className="py-4 px-6">{transaction.id}</td>
-                <td className="py-4 px-6">{transaction.date}</td>
-                <td className="py-4 px-6 text-gray-900 font-medium">{transaction.amount}</td>
+            {restaurantData.map((restaurant, index) => (
+              <tr key={index} className="text-gray-500 hover:bg-gray-50">
                 <td className="py-4 px-6">
-                  {transaction.cardType} {transaction.cardLabel}
+                  <img
+                    src={restaurant.image}
+                    alt={restaurant.name}
+                    className="w-10 h-10 rounded-full"
+                  />
                 </td>
-                <td className="py-4 px-6">{transaction.customer}</td>
-                <td className="py-4 px-6">{transaction.paymentType}</td>
+                <td className="py-4 px-6">{restaurant.name}</td>
+                <td className="py-4 px-6">{restaurant.email}</td>
+                <td
+                  className={`py-4 px-6 font-medium ${
+                    restaurant.status === "Active"
+                      ? "text-green-500"
+                      : "text-red-500"
+                  }`}
+                >
+                  {restaurant.status}
+                </td>
+                <td className="py-4 px-6 flex space-x-4">
+                 <Link to={"/edit-restaurant"}> <button
+
+                    className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                  >
+                    Edit
+                  </button>
+                  </Link>
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      {/* Button placed below the table and styled properly */}
-      <div className="flex justify-center mt-6 ">
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50">
+          <div className="bg-white p-6 rounded-md shadow-lg max-w-sm w-full">
+            <h3 className="text-xl font-semibold mb-4">
+              Are you sure you want to delete this restaurant?
+            </h3>
+            <div className="flex justify-between">
+              <button
+                onClick={handleDelete}
+                className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 focus:outline-none"
+              >
+                Yes, Delete
+              </button>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 focus:outline-none"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* View All Button */}
+      <div className="flex justify-center mt-6">
         <button className="bg-gray-300 px-6 py-3 rounded-lg text-black font-medium hover:bg-gray-400 mb-5">
           View All Restaurants
         </button>

@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar"
 import TransactionsTable from "./transactions-tables"
 export default function DashboardStats() {
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex flex-col lg:flex-row min-h-screen bg-gray-50">
       <Sidebar />
      
       <div className="flex-1 p-6">
