@@ -55,7 +55,7 @@ export default function RestaurantsTable() {
         <h2 className="text-xl font-semibold">Restaurants</h2>
        <Link to="/add-restaurant"><button
         
-        className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+        className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600"
       >
         Add Restaurant
       </button></Link>
@@ -99,6 +99,13 @@ export default function RestaurantsTable() {
                   {restaurant.status}
                 </td>
                 <td className="py-4 px-6 flex space-x-4">
+                 <Link to={"/view-restaurant"}> <button
+
+                    className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+                  >
+                   View
+                  </button>
+                  </Link>
                  <Link to={"/edit-restaurant"}> <button
 
                     className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
@@ -146,7 +153,7 @@ export default function RestaurantsTable() {
 
       {/* View All Button */}
       <div className="flex justify-center mt-6">
-        <button className="bg-gray-300 px-6 py-3 rounded-lg text-black font-medium hover:bg-gray-400 mb-5">
+        <button className="bg-purple-500 px-6 py-3 rounded-lg text-white font-medium hover:bg-purple-600 mb-5">
           View All Restaurants
         </button>
       </div>

@@ -3,11 +3,13 @@ import Sidebar from "./Sidebar"
 import TransactionsTable from "./transactions-tables"
 export default function DashboardStats() {
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen bg-gray-50">
+    <div className="flex flex-col lg:flex-row min-h-screen bg-gray-100">
       <Sidebar />
      
       <div className="flex-1 p-6">
         <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
+        <h1 className="text-4xl font-semibold mb-6">Hello Hashir!</h1>
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Total Restaurants Card */}
           <div className="bg-white rounded-lg shadow p-6">

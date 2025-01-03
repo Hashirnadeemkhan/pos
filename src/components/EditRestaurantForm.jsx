@@ -53,13 +53,26 @@ const EditRestaurantForm = () => {
 
 
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col lg:flex-row bg-gray-100">
       <Sidebar />
       <div className="lg:max-w-5xl w-full mx-auto p-6 bg-white shadow-md rounded-md flex-1">
         <h2 className="text-2xl font-semibold text-gray-700 mb-6">Edit Restaurant</h2>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {/* Restaurant Name */}
-          <div>
+         
+              {/* Image Upload */}
+              <div>
+            <label className="block text-gray-600 mb-2">Restaurant Image</label>
+            <input
+              type="file"
+              name="image"
+              accept="image/*"
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+            />
+            {errors.image && <p className="text-red-500 text-sm mt-1">{errors.image}</p>}
+          </div>
+           {/* Restaurant Name */}
+           <div>
             <label className="block text-gray-600 mb-2">Restaurant Name</label>
             <input
               type="text"
@@ -100,17 +113,18 @@ const EditRestaurantForm = () => {
             />
           </div>
 
-             {/* Image Upload */}
-             <div>
-            <label className="block text-gray-600 mb-2">Restaurant Image</label>
+          {/* Number */}
+          <div>
+            <label className="block text-gray-600 mb-2">Number</label>
             <input
-              type="file"
-              name="image"
-              accept="image/*"
+              type="tel"
+              name="number"
+              value={formData.number}
               onChange={handleChange}
+              placeholder="Enter contact number"
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+              required
             />
-            {errors.image && <p className="text-red-500 text-sm mt-1">{errors.image}</p>}
           </div>
 
           {/* Owner Name */}
@@ -141,19 +155,7 @@ const EditRestaurantForm = () => {
             />
           </div>
 
-          {/* Number */}
-          <div>
-            <label className="block text-gray-600 mb-2">Number</label>
-            <input
-              type="tel"
-              name="number"
-              value={formData.number}
-              onChange={handleChange}
-              placeholder="Enter contact number"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
-              required
-            />
-          </div>
+      
 
           {/* Handler Contact */}
           <div>
