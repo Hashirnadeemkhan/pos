@@ -38,14 +38,11 @@ const Profile = () => {
   return (
     <div className="flex flex-col lg:flex-row bg-gray-100">
       <Sidebar />
-      <div
-        className="lg:max-w-4xl w-full mx-auto p-6 bg-white shadow-md rounded-md flex-1 mt-6"
-        style={{ maxHeight: "auto" }} // Adjust height if necessary
-      >
+      <div className="lg:max-w-4xl w-full mx-auto p-6 bg-white shadow-md rounded-md flex-1 mt-6 max-h-[500px] overflow-y-auto">
         <h2 className="text-xl font-semibold text-gray-700 mb-6">Edit Profile</h2>
         <form
           onSubmit={handleSubmit}
-          className="grid grid-cols-1 gap-6 md:grid-cols-2 overflow-y-auto"
+          className="grid grid-cols-1 gap-6 md:grid-cols-2"
         >
           {/* Name */}
           <div>

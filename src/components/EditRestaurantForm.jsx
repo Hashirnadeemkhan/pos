@@ -53,9 +53,9 @@ const EditRestaurantForm = () => {
 
 
   return (
-    <div className="flex flex-col lg:flex-row bg-gray-100">
+    <div className="flex flex-col lg:flex-row bg-gray-100 ">
       <Sidebar />
-      <div className="lg:max-w-5xl w-full mx-auto p-6 bg-white shadow-md rounded-md flex-1">
+      <div className="lg:max-w-5xl w-full mx-auto p-6 bg-white shadow-md rounded-md flex-1 mt-10 mb-10">
         <h2 className="text-2xl font-semibold text-gray-700 mb-6">Edit Restaurant</h2>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6 md:grid-cols-2">
          

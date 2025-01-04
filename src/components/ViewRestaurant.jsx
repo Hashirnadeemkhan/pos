@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 
+
 const ViewRestaurantForm = () => {
   const [formData] = useState({
     restaurantName: "Spicy Hub",

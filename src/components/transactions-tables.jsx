@@ -32,6 +32,36 @@ const restaurantData = [
     email: "pastapalace@gmail.com",
     status: "Inactive",
   },
+  {
+    image: "/spice.jpeg",
+    name: "The Spice Room",
+    email: "spiceroom@gmail.com",
+    status: "Active",
+  },
+  {
+    image: "/olive.jpeg",
+    name: "Olive Garden",
+    email: "olivegarden@gmail.com",
+    status: "Inactive",
+  },
+  {
+    image: "/sushi.jpeg",
+    name: "Sushi Paradise",
+    email: "sushiparadise@gmail.com",
+    status: "Active",
+  },
+  {
+    image: "/burger.webp",
+    name: "Burger Haven",
+    email: "burgerhaven@gmail.com",
+    status: "Active",
+  },
+  {
+    image: "/pasta.jpeg",
+    name: "Pasta Palace",
+    email: "pastapalace@gmail.com",
+    status: "Inactive",
+  },
 ];
 
 export default function RestaurantsTable() {
@@ -55,7 +85,7 @@ export default function RestaurantsTable() {
         <h2 className="text-xl font-semibold">Restaurants</h2>
        <Link to="/add-restaurant"><button
         
-        className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600"
+        className="bg-purple-500 text-white lg:px-5 py-2 rounded hover:bg-purple-600 px-3 lg:text-lg  text-sm"
       >
         Add Restaurant
       </button></Link>
@@ -153,9 +183,11 @@ export default function RestaurantsTable() {
 
       {/* View All Button */}
       <div className="flex justify-center mt-6">
-        <button className="bg-purple-500 px-6 py-3 rounded-lg text-white font-medium hover:bg-purple-600 mb-5">
+      <Link to={"/restaurant"}>
+        <button className="bg-purple-500 lg:px-4 px-2 text-lg  py-2 rounded-lg text-white  hover:bg-purple-600 mb-5">
           View All Restaurants
         </button>
+        </Link>
       </div>
     </div>
   );
