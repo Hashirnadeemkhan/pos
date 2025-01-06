@@ -4,8 +4,8 @@ import TransactionsTable from "./transactions-tables"
 export default function DashboardStats() {
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-gray-100">
-      <Sidebar />
      
+      <Sidebar />
       <div className="flex-1 p-6">
         <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
         <h1 className="text-4xl font-semibold mb-6">Hello Hashir!</h1>
@@ -17,9 +17,7 @@ export default function DashboardStats() {
               <div>
                 <p className="text-gray-500 text-sm">Total Restaurants</p>
                 <h2 className="text-3xl font-bold mt-2">1,234</h2>
-                <p className="text-green-500 text-sm mt-2">
-                  +12% from last month
-                </p>
+               
               </div>
               <div className="bg-emerald-100 p-3 rounded-lg">
                 <svg
@@ -39,7 +37,7 @@ export default function DashboardStats() {
               </div>
             </div>
             <div className="mt-4 h-2 bg-emerald-50 rounded-full overflow-hidden">
-              <div className="h-full bg-emerald-500 rounded-full w-3/4"></div>
+              <div className="h-full bg-emerald-500 rounded-full w-full"></div>
             </div>
           </div>
 
@@ -49,9 +47,7 @@ export default function DashboardStats() {
               <div>
                 <p className="text-gray-500 text-sm">Active Accounts</p>
                 <h2 className="text-3xl font-bold mt-2">892</h2>
-                <p className="text-green-500 text-sm mt-2">
-                  +5% from last month
-                </p>
+              
               </div>
               <div className="bg-violet-100 p-3 rounded-lg">
                 <svg
@@ -71,7 +67,7 @@ export default function DashboardStats() {
               </div>
             </div>
             <div className="mt-4 h-2 bg-violet-50 rounded-full overflow-hidden">
-              <div className="h-full bg-violet-500 rounded-full w-4/5"></div>
+              <div className="h-full bg-violet-500 rounded-full w-full"></div>
             </div>
           </div>
 
@@ -81,9 +77,7 @@ export default function DashboardStats() {
               <div>
                 <p className="text-gray-500 text-sm">Deactivated Accounts</p>
                 <h2 className="text-3xl font-bold mt-2">156</h2>
-                <p className="text-red-500 text-sm mt-2">
-                  +2% from last month
-                </p>
+              
               </div>
               <div className="bg-red-100 p-3 rounded-lg">
                 <svg
@@ -103,7 +97,7 @@ export default function DashboardStats() {
               </div>
             </div>
             <div className="mt-4 h-2 bg-red-50 rounded-full overflow-hidden">
-              <div className="h-full bg-red-500 rounded-full w-1/4"></div>
+              <div className="h-full bg-red-500 rounded-full w-full"></div>
             </div>
           </div>
         </div>

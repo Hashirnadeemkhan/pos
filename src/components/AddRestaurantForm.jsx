@@ -53,9 +53,10 @@ const AddRestaurantForm = () => {
 
 
   return (
-    <div className="flex flex-col lg:flex-row bg-gray-100">
+    <div className="flex flex-col lg:flex-row bg-gray-100 min-h-screen">
       <Sidebar />
-      <div className="lg:max-w-5xl w-full mx-auto p-6 bg-white shadow-md rounded-md flex-1">
+      <div className="flex-1 p-4 lg:p-6">
+      <div className="lg:max-w-5xl w-full mx-auto p-6 bg-white shadow-md rounded-md flex-1 mt-10 mb-10">
         <h2 className="text-2xl font-semibold text-gray-700 mb-6">Add Restaurant</h2>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6 md:grid-cols-2">
          
@@ -204,7 +205,7 @@ const AddRestaurantForm = () => {
          type="submit"
          className="w-full bg-purple-500 text-white py-2 px-4 rounded-md hover:bg-purple-600 focus:outline-none focus:ring focus:ring-blue-300"
        >
-     Update
+     Save
        </button>
      </div>
    </form>
@@ -212,7 +213,7 @@ const AddRestaurantForm = () => {
      
       </div>
 
-      
+      </div>
     </div>
   );
 };
