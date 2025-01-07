@@ -7,6 +7,14 @@ import EditRestaurantForm from "./components/EditRestaurantForm";
 import Restaurant from "./components/Restaurant";
 import ViewRestaurant from "./components/ViewRestaurant";
 import Profile from "./components/Profile";
+import Dashboard from "./pages/restaurant-panel/Dashboard";
+import Inventory from "./resturantcomponent/inventory";
+import ViewProduct from "./resturantcomponent/viewProduct";
+import AddProductForm from "./resturantcomponent/addproduct";
+import EditProductForm from "./resturantcomponent/editform";
+import CheckoutForm from "./resturantcomponent/checkoutform";
+import EditProfile from "./resturantcomponent/productProfile";
+
 
 function App() {
   return (
@@ -33,6 +41,20 @@ function App() {
         
         {/*profile*/}
         <Route path="/profile" element={<Profile/>} />
+
+
+
+{/* Restaurant panel pages */}
+
+        <Route path="/restaurant-panel" element={<Dashboard/>} />
+        <Route path="/inventory" element={<Inventory/>} />
+        <Route path="/view-product" element={<ViewProduct/>} />
+        <Route path="/add-product" element={<AddProductForm/>} />
+        <Route path="/edit-product" element={<EditProductForm/>} />
+        <Route path="/checkout-form" element={<CheckoutForm/>} />
+        <Route path="/edit-profile" element={<EditProfile/>} />
+
+
       </Routes>
 
     </Router>

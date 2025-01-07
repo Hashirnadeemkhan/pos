@@ -1,18 +1,17 @@
 
 import { useState } from "react";
-import Sidebar from "./Sidebar";
+import RestaurantSidebar from "./restaurantSidebar";
 
-const AddRestaurantForm = () => {
+const EditProfile = () => {
     const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
-    restaurantName: "",
+    productName: "",
     email: "",
-    password: "",
     ownerName: "",
     location: "",
     number: "",
     handlerContact: "",
-    restaurantType: "",
+    productType: "",
     accountStatus: "active",
   });
 
@@ -25,16 +24,16 @@ const AddRestaurantForm = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.restaurantName.trim()) newErrors.restaurantName = "Restaurant Name is required.";
+    if (!formData.productName.trim()) newErrors.restaurantName = "Prodcut Name is required.";
     if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Valid Email is required.";
-    if (!formData.password.trim() || formData.password.length < 6)
+   
       newErrors.password = "Password must be at least 6 characters.";
     if (!formData.ownerName.trim()) newErrors.ownerName = "Owner Name is required.";
     if (!formData.location.trim()) newErrors.location = "Location is required.";
     if (!formData.number.trim() || !/^\d{10}$/.test(formData.number))
       newErrors.number = "Valid 10-digit contact number is required.";
-    if (!formData.restaurantType.trim()) newErrors.restaurantType = "Restaurant Type is required.";
-    if (!formData.image) newErrors.image = "Restaurant Image is required.";
+    if (!formData.productType.trim()) newErrors.restaurantType = "Product Type is required.";
+    if (!formData.image) newErrors.image = "Product Image is required.";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -54,15 +53,15 @@ const AddRestaurantForm = () => {
 
   return (
     <div className="flex flex-col lg:flex-row bg-gray-100 min-h-screen">
-      <Sidebar />
+   <RestaurantSidebar/>
       <div className="flex-1 p-4 lg:p-6 mt-5">
       <div className="lg:max-w-5xl w-full mx-auto p-6 bg-white shadow-md rounded-md flex-1 mt-10 mb-10">
-        <h2 className="text-2xl font-semibold text-gray-700 mb-6">Add Restaurant</h2>
+        <h2 className="text-2xl font-semibold text-gray-700 mb-6">Edit Profile</h2>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6 md:grid-cols-2">
          
          {/* Image Upload */}
          <div>
-       <label className="block text-gray-600 mb-2">Restaurant Image</label>
+       <label className="block text-gray-600 mb-2">Product Image</label>
        <input
          type="file"
          name="image"
@@ -74,13 +73,13 @@ const AddRestaurantForm = () => {
      </div>
       {/* Restaurant Name */}
       <div>
-       <label className="block text-gray-600 mb-2">Restaurant Name</label>
+       <label className="block text-gray-600 mb-2">Product Name</label>
        <input
          type="text"
-         name="restaurantName"
-         value={formData.restaurantName}
+         name="productName"
+         value={formData.producttName}
          onChange={handleChange}
-         placeholder="Enter restaurant name"
+         placeholder="Enter product name"
          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
          required
        />
@@ -100,19 +99,7 @@ const AddRestaurantForm = () => {
        />
      </div>
 
-     {/* Password */}
-     <div>
-       <label className="block text-gray-600 mb-2">Password</label>
-       <input
-         type="password"
-         name="password"
-         value={formData.password}
-         onChange={handleChange}
-         placeholder="Enter password"
-         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
-         required
-       />
-     </div>
+     
 
      {/* Number */}
      <div>
@@ -150,7 +137,7 @@ const AddRestaurantForm = () => {
          name="location"
          value={formData.location}
          onChange={handleChange}
-         placeholder="Enter restaurant location"
+         placeholder="Enter address"
          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
          required
        />
@@ -173,11 +160,11 @@ const AddRestaurantForm = () => {
 
      {/* Restaurant Type */}
      <div>
-       <label className="block text-gray-600 mb-2">Restaurant Type</label>
+       <label className="block text-gray-600 mb-2">Product Type</label>
        <input
          type="text"
-         name="restaurantType"
-         value={formData.restaurantType}
+         name="productType"
+         value={formData.productType}
          onChange={handleChange}
          placeholder="e.g., Fast Food, Café"
          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
@@ -218,4 +205,4 @@ const AddRestaurantForm = () => {
   );
 };
 
-export default AddRestaurantForm;
+export default EditProfile;
