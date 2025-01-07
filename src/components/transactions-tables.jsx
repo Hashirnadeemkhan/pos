@@ -87,7 +87,7 @@ export default function RestaurantsTable() {
     <h2 className="lg:text-xl text-lg font-semibold">Restaurants</h2>
     <Link to="/add-restaurant">
       <button
-        className="bg-purple-500 text-white lg:px-5 py-2 rounded hover:bg-purple-600 px-3 lg:text-lg text-sm"
+        className="bg-purple-500 text-white lg:px-5 py-2 rounded hover:bg-purple-600 px-3  text-sm"
       >
         Add Restaurant
       </button>
@@ -190,7 +190,7 @@ export default function RestaurantsTable() {
   {/* View All Button */}
   <div className="flex justify-center mt-6">
     <Link to={"/restaurant"}>
-      <button className="bg-purple-500 lg:px-4 px-2 text-lg py-2 rounded-lg text-white hover:bg-purple-600 mb-5">
+      <button className="bg-purple-500 lg:px-4 px-3 text-sm py-2 rounded-sm text-white hover:bg-purple-600 mb-5">
         View All Restaurants
       </button>
     </Link>

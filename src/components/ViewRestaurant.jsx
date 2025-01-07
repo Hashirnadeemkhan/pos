@@ -16,9 +16,9 @@ const ViewRestaurantForm = () => {
   });
 
   return (
-    <div className="flex flex-col lg:flex-row bg-gray-100 min-h-screen">
+    <div className="flex flex-col lg:flex-row bg-gray-100 min-h-screen ">
       <Sidebar />
-      <div className="flex-1 p-4 lg:p-6">
+      <div className="flex-1 p-4 lg:p-6 mt-10">
       <div className="lg:max-w-5xl w-full mx-auto p-6 bg-white shadow-md rounded-md flex-1  mt-5 mb-5">
         <h2 className="text-2xl font-semibold text-gray-700 mt-2 mb-10">View Restaurant</h2>
 

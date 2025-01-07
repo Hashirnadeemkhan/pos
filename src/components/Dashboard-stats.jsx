@@ -6,7 +6,7 @@ export default function DashboardStats() {
     <div className="flex flex-col lg:flex-row min-h-screen bg-gray-100">
      
       <Sidebar />
-      <div className="flex-1 p-6">
+      <div className="flex-1 p-6 mt-1">
         <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
         <h1 className="text-4xl font-semibold mb-6">Hello Hashir!</h1>
         

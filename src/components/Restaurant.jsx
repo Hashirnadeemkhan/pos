@@ -50,12 +50,12 @@ const Restaurant = () => {
     return (
       <div className="flex flex-col lg:flex-row bg-gray-100 min-h-screen">
         <Sidebar />
-        <div className="flex-1 p-4 lg:p-6">
+        <div className="flex-1 p-4 lg:p-6 mt-14">
           <div className="bg-white shadow-md rounded-md max-w-6xl mx-auto">
-            <div className="flex items-center justify-between p-6">
-              <h2 className="text-2xl font-semibold">Restaurants</h2>
+            <div className="flex items-center justify-between py-6 px-2 lg:px-6 w-full">
+              <h2 className="lg:text-xl text-lg font-semibold">Restaurants</h2>
               <Link to="/add-restaurant">
-                <button className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">
+                <button className="bg-purple-500 text-white lg:px-5 py-2 rounded hover:bg-purple-600 px-3 text-sm">
                   Add Restaurant
                 </button>
               </Link>

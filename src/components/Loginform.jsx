@@ -4,7 +4,7 @@
 const LoginForm = () => {
   return (
    
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 flex-1">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 flex-1 px-5">
       <div className="w-full max-w-xl  bg-white shadow-md rounded-lg p-6">
         <h2 className="text-lg font-bold mb-4">Login</h2>
         <form>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom"; // Replace Link with NavLink
+import { NavLink } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { IoMdLogOut } from "react-icons/io";
 import { FaUserEdit } from "react-icons/fa";
@@ -13,10 +13,10 @@ export default function Sidebar() {
 
   return (
     <div>
-      {/* Mobile Hamburger Menu */}
+      {/* Mobile Hamburger Menu - Moved slightly lower */}
       <button
         onClick={toggleSidebar}
-        className="lg:hidden p-4 text-gray-700 focus:outline-none"
+        className="lg:hidden p-4 text-gray-700 focus:outline-none absolute top-4 right-4 z-20"
       >
         <svg
           className="w-6 h-6"
@@ -41,7 +41,7 @@ export default function Sidebar() {
       >
         {/* Logo */}
         <div className="p-6">
-          <img src="/logo-dark.png" className="w-36" alt="logo" />
+          <img src="/logo1.png" className="w-20 ml-12"  alt="logo" />
         </div>
 
         {/* Navigation */}
@@ -56,7 +56,7 @@ export default function Sidebar() {
             }
           >
             <svg
-              className="w-5 h-5"
+              className="w-5 h-5 "
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -165,3 +165,4 @@ export default function Sidebar() {
     </div>
   );
 }
+
