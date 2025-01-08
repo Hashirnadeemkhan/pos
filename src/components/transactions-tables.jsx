@@ -3,6 +3,7 @@ import { LuEye } from "react-icons/lu";
 import { AiOutlineEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
+
 const restaurantData = [
   {
     image: "/spice.jpeg",

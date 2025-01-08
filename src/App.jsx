@@ -14,6 +14,9 @@ import AddProductForm from "./resturantcomponent/addproduct";
 import EditProductForm from "./resturantcomponent/editform";
 import CheckoutForm from "./resturantcomponent/checkoutform";
 import EditProfile from "./resturantcomponent/productProfile";
+import CheckoutHistoryTable from "./resturantcomponent/checkout_table";
+import CheckoutEdit from "./resturantcomponent/editCheckoutForm";
+import CheckoutView from "./resturantcomponent/viewCheckoutform";
 
 
 function App() {
@@ -52,6 +55,9 @@ function App() {
         <Route path="/add-product" element={<AddProductForm/>} />
         <Route path="/edit-product" element={<EditProductForm/>} />
         <Route path="/checkout-form" element={<CheckoutForm/>} />
+        <Route path="/view-checkout" element={< CheckoutView/>} />
+        <Route path="/edit-checkout" element={< CheckoutEdit/>} />
+        <Route path="/checkout-historyTable" element={<CheckoutHistoryTable/>} />
         <Route path="/edit-profile" element={<EditProfile/>} />
 
 

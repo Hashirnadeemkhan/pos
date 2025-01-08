@@ -149,16 +149,16 @@ const CheckoutForm = () => {
 
             {/* Tax Inclusion */}
             <div>
-              <label className="flex items-center text-gray-600">
+              <label className="flex items-center text-gray-600 mb-2">Tax Inclusion </label>
                 <input
-                  type="checkbox"
+                  type="text"
                   name="taxInclusion"
                   checked={formData.taxInclusion}
                   onChange={handleChange}
-                  className="mr-2"
+                  placeholder="Enter price"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+                  required
                 />
-                Tax Inclusion
-              </label>
             </div>
 
             {/* Payment Method */}

@@ -140,7 +140,7 @@ export default function DataTables() {
                     {item.status}
                   </td>
                   <td className="py-4 px-3 lg:px-6 flex space-x-5 items-center">
-                       <Link to={"/view-product"}>
+                       <Link to={"/view-checkout"}>
                                     <button
                                       className="text-green-500 hover:text-green-600"
                                       title="View"

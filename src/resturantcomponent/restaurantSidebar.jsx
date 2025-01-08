@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { IoMdLogOut } from "react-icons/io";
 import { FaUserEdit } from "react-icons/fa";
+import { FaRegCheckCircle } from "react-icons/fa";
 
 export default function RestaurantSidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -98,26 +99,14 @@ export default function RestaurantSidebar() {
 
           {/* checkout */}
           <NavLink
-            to="/checkout-form"
+            to="/checkout-historyTable"
             className={({ isActive }) =>
               `flex items-center gap-3 px-4 py-3 rounded-lg ${
                 isActive ? "bg-purple-50 text-purple-600" : "text-gray-700 hover:bg-gray-50"
               }`
             }
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M8 2C6.89543 2 6 2.89543 6 4V20M18 2C19.1046 2 20 2.89543 20 4V20M12 8H4M20 8H12M9 22H15"
-              />
-            </svg>
+            <FaRegCheckCircle size={20}/>
             <span>Checkout</span>
           </NavLink>
 
